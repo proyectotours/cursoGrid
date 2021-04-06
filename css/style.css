@@ -1,3 +1,343 @@
+
+/* ============================= */
+          /* CURSOS #1 */
+/* ============================= */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
     font-size: 15pt;
+    background: #333;
+    color: #FFF;
 }
+main{
+  display: grid;
+  grid-gap: 10px;
+  padding: 20px;
+  grid-template-areas: "header"
+                        "contenido"
+                        "izquierda"
+                        "derecha"
+                        "footer";
+}
+header,
+section,
+aside,
+article,
+footer{
+  background: #D78700;
+  padding: 20px;
+  font-size: 30px;
+}
+header{
+  grid-area: header;
+}
+section{
+  grid-area: contenido;
+}
+aside{
+  grid-area: izquierda;
+}
+article{
+  grid-area: derecha;
+}
+footer{
+  grid-area: footer;
+}
+
+@media (min-width: 500px){
+  main{
+    grid-template-areas: 
+                      "header header header"
+                      "izquierda contenido derecha"
+                      "footer footer footer";
+  }
+}
+
+/* ============================= */
+          /* CURSO #2 */
+/* ============================= */
+
+.curso2{
+  background: #333;
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.curso2 > div{
+  background: #A06B11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  padding: 20px;
+  font-size: 30px;
+}
+
+@media (min-width: 500px){
+
+.curso2 > div:nth-child(6){
+  background: #1F8116;
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+.curso2 > div:nth-child(10){
+  background: #1F8116;
+  grid-column: 3 / 5;
+  grid-row: 3 / 4;
+}
+
+}
+
+/* ============================== */
+        /* CURSO #3 */
+/* ============================== */
+
+.curso3{
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  background: #333;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.curso3 > div{
+  background: #0E5CE0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  padding: 20px;
+  font-size: 30px;
+  /* IMPLICIT GRID */
+  grid-auto-rows: 1fr;
+}
+
+/* =============================== */
+          /* CURSO #4 #5 */
+/* =============================== */
+
+.curso4{
+  background: #333;
+  display: grid;
+  grid-gap: 20px;
+  /* grid-template-columns: 1fr 2fr; */
+  
+  grid-template-columns: 
+      [sidebar-start] 1fr
+      [sidebar-end contenido-start] 2fr
+      [contenido-end];
+      
+  grid-template-rows: 
+      [header-start] 1fr
+      [header-end contenido-start] 2fr
+      [footer-start] 1fr
+      [footer-end];
+}
+.header,
+.aside,
+.contenido,
+.footer{
+  background: #BB1187;
+  color: #FFF;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+.header{
+  grid-column: sidebar-start / span 2;
+}
+.footer{
+  grid-column: sidebar-start / -1;
+}
+*/
+
+.header{
+  grid-column: sidebar-start / contenido-end;
+}
+.aside{
+  grid-row: header-end / footer-end;
+}
+.footer{
+  grid-column: contenido-start / contenido-end;
+}
+
+/* ======================================= */
+          /* CURSO #6 */
+/* ======================================= */
+
+.curso6{
+  background: #333;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.curso6 > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #18DB00;
+  padding: 20px;
+  font-size: 30px;
+}
+@media (max-width:700px){
+  .curso6{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
+@media (max-width: 500px){
+  .curso6{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+  }
+}
+
+/* ==================================== */
+          /* CURSO #7 */
+/* ==================================== */
+
+.curso7{
+  background: #333;
+  display: grid;
+  grid-gap: 20px;
+  
+  grid-template-areas: 
+      "gridheader"
+      "gridcontenido"
+      "gridizquierda"
+      "gridderacha"
+      "gridfooter";
+}
+@media (min-width: 700px){
+  .curso7{
+    grid-template-areas: 
+        "gridheader gridheader gridderacha"
+        "gridizquierda gridcontenido gridderacha"
+        "gridizquierda gridfooter gridderacha";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2fr 5fr 1fr;
+  }
+}
+.gridheader,
+.gridizq,
+.gridcont,
+.gridder,
+.gridfoo{
+  background: #1DA2AA;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gridheader{
+  grid-area: gridheader;
+}
+.gridcont{
+  grid-area: gridcontenido;
+}
+.gridizq{
+  grid-area: gridizquierda;
+}
+.gridder{
+  grid-area: gridderacha;
+}
+.gridfoo{
+  grid-area: gridfooter;
+}
+
+/* ======================================= */
+            /* CURSO #8 */
+/* ======================================= */
+
+.curso8{
+  background: #333;
+  grid-gap: 20px;
+  display: grid;
+  grid-template-columns: 
+  repeat(4, 1fr);
+  /* 8 columnas con un maximo y un limite */
+      /*repeat(8, minmax(100px, 1fr));*/
+  /* 8 columnas con un patron dos (30px minimo 10% maximo flexible) */
+      /*repeat(4, 30px minmax(10%, 1fr));*/
+  /* 8 columnas con un minino marcado por el contenido y un maximo de 30% */
+      /*repeat(8, minmax(min-content, 30%));*/
+  /* 8 columna con un minimo y un maximo marcado por su contenido */
+  /*repeat(8, minmax(min-content, max-content));*/
+}
+.curso8 .gridElement{
+  color: #FFF;
+  background: #FF0061;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======================================= */
+            /* CURSO #9 */
+/* ======================================= */
+
+.curso9{
+  background: #333;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 
+  [start]
+  repeat(4,
+      [col-lg-start] minmax(50px, 1fr)
+      [col-lg-end col-md-start] minmax(30%, 1fr)
+      [col-md-end col-sm-start] minmax(20px, 1fr)
+  )
+  [end]
+  ;
+}
+.curso9 .gridcol{
+  background: #444AA5;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gridcol:first-of-type{
+  background: #FF0000;
+  grid-column: col-lg-start / end;
+}
+
+/* ======================================= */
+              /* CURSO #10 */
+/* ======================================= */
+
+
+/* ======================================= */
+               /* CURSO #11 */
+/* ======================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
