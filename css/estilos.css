@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kameron&family=Lobster&display=swap');
+@import url(fontello.css);
+@import url(all.css);
+@import url(all.min.css);
+@import url(fontawesome.css);
+@import url(fontawesome.min.css);
+@import url(normalize.css);
+@import url(select.css);
+@import url(modal.css);
+@import url(ir_arriba.css);
+@import url(cards.css);
+@import url(catalogo.css);
+@import url(registrar.css);
+@import url(preloader.css);
+
+/* *,
+::before,
+::after {
+   margin: 0;
+   padding: 0;
+
+   font-family: 'Lobster', cursive;
+   font-family: 'Kameron',
+      serif;
+   font-family: 'Lobster',
+  cursive;
+} */
+body{
+  font-family: 'Kameron',
+      serif;
+}
+.header {
+   width: 100%;
+   height: auto;
+   box-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+   color: #000;
+}
+
+a {
+   text-decoration: inherit;
+   color: #000;
+}
+
+.container {
+   width: 90%;
+   margin: auto;
+}
+
+.content-logo-nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.toggle {
+   display: block;
+   display: none;
+}
+
+.toggle span {
+   display: block;
+   background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+   width: 40px;
+   height: 3px;
+   margin: 4px;
+}
+
+.navigation ul {
+   list-style: none;
+}
+
+.navigation ul li {
+   display: inline-block;
+}
+
+.navigation ul li a {
+   display: inline-block;
+   text-transform: uppercase;
+   padding: .5rem 1rem;
+   color: #fff;
+}
+
+section {
+   position: relative;
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   box-sizing: border-box;
+   background: linear-gradient(180deg, #0A6BC6, #DD25C4), url(../img/IMG-20200615-WA0003.jpg);
+   background-blend-mode: screen;
+   color: #000;
+   text-align: center;
+}
+
+section .content {
+   max-width: 900px;
+}
+
+section .content h2 {
+   font-size: 1em;
+   padding: 15px 20px;
+}
+
+section .content p {
+   font-size: .6em;
+   padding: 15px 20px;
+   margin-bottom: 230px;
+}
+
+.wave {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+}
+
+@media screen and (max-width: 768px) {
+   .navigation {
+      width: 100%;
+   }
+
+   .navigation ul {
+      display: none;
+   }
+
+   .navigation ul.show {
+      display: block;
+   }
+
+   .navigation ul li {
+      display: block;
+      margin-bottom: 15px;
+   }
+
+   .navigation ul li a {
+      text-align: justify;
+      display: block;
+      background: rgba(255, 255, 255, .5);
+      border-radius: 5px 5px 0 0;
+      letter-spacing: 5px;
+      font-weight: bolder;
+      color: #000;
+   }
+
+   .navigation ul li a:hover {
+      color: #fff;
+   }
+
+   .toggle {
+      display: block;
+   }
+}

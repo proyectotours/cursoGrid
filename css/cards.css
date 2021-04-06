@@ -1,0 +1,56 @@
+.content_cards {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cards {
+  width: 30%;
+  text-align: center;
+}
+
+.cards .image img {
+  width: 100%;
+}
+
+.cards .title h2 {
+  margin-bottom: 15px;
+}
+
+.cards .boton_cards p {
+  margin-bottom: 15px;
+}
+
+.cards .boton_cards button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: none;
+  padding: 5px 15px;
+  transition: all .3s ease;
+}
+
+.cards .boton_cards button:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .cards {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content_cards {
+    width: 90%;
+  }
+
+  .cards {
+    width: 100%;
+    padding: 20px;
+  }
+}
